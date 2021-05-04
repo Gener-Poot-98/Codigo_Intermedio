@@ -1,0 +1,378 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    IGUAL
+
+Grammar
+
+Rule 0     S' -> r
+Rule 1     r -> e
+Rule 2     e -> e MAS e
+Rule 3     e -> e MENOS e
+Rule 4     e -> e POR e
+Rule 5     e -> e DIV e
+Rule 6     e -> MENOS e
+Rule 7     e -> PARIZQ e PARDER
+Rule 8     e -> ENTERO
+Rule 9     e -> DECIMAL
+Rule 10    e -> ID
+
+Terminals, with rules where they appear
+
+DECIMAL              : 9
+DIV                  : 5
+ENTERO               : 8
+ID                   : 10
+IGUAL                : 
+MAS                  : 2
+MENOS                : 3 6
+PARDER               : 7
+PARIZQ               : 7
+POR                  : 4
+error                : 
+
+Nonterminals, with rules where they appear
+
+e                    : 1 2 2 3 3 4 4 5 5 6 7
+r                    : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . r
+    (1) r -> . e
+    (2) e -> . e MAS e
+    (3) e -> . e MENOS e
+    (4) e -> . e POR e
+    (5) e -> . e DIV e
+    (6) e -> . MENOS e
+    (7) e -> . PARIZQ e PARDER
+    (8) e -> . ENTERO
+    (9) e -> . DECIMAL
+    (10) e -> . ID
+
+    MENOS           shift and go to state 3
+    PARIZQ          shift and go to state 4
+    ENTERO          shift and go to state 5
+    DECIMAL         shift and go to state 6
+    ID              shift and go to state 7
+
+    r                              shift and go to state 1
+    e                              shift and go to state 2
+
+state 1
+
+    (0) S' -> r .
+
+
+
+state 2
+
+    (1) r -> e .
+    (2) e -> e . MAS e
+    (3) e -> e . MENOS e
+    (4) e -> e . POR e
+    (5) e -> e . DIV e
+
+    $end            reduce using rule 1 (r -> e .)
+    MAS             shift and go to state 8
+    MENOS           shift and go to state 9
+    POR             shift and go to state 10
+    DIV             shift and go to state 11
+
+
+state 3
+
+    (6) e -> MENOS . e
+    (2) e -> . e MAS e
+    (3) e -> . e MENOS e
+    (4) e -> . e POR e
+    (5) e -> . e DIV e
+    (6) e -> . MENOS e
+    (7) e -> . PARIZQ e PARDER
+    (8) e -> . ENTERO
+    (9) e -> . DECIMAL
+    (10) e -> . ID
+
+    MENOS           shift and go to state 3
+    PARIZQ          shift and go to state 4
+    ENTERO          shift and go to state 5
+    DECIMAL         shift and go to state 6
+    ID              shift and go to state 7
+
+    e                              shift and go to state 12
+
+state 4
+
+    (7) e -> PARIZQ . e PARDER
+    (2) e -> . e MAS e
+    (3) e -> . e MENOS e
+    (4) e -> . e POR e
+    (5) e -> . e DIV e
+    (6) e -> . MENOS e
+    (7) e -> . PARIZQ e PARDER
+    (8) e -> . ENTERO
+    (9) e -> . DECIMAL
+    (10) e -> . ID
+
+    MENOS           shift and go to state 3
+    PARIZQ          shift and go to state 4
+    ENTERO          shift and go to state 5
+    DECIMAL         shift and go to state 6
+    ID              shift and go to state 7
+
+    e                              shift and go to state 13
+
+state 5
+
+    (8) e -> ENTERO .
+
+    MAS             reduce using rule 8 (e -> ENTERO .)
+    MENOS           reduce using rule 8 (e -> ENTERO .)
+    POR             reduce using rule 8 (e -> ENTERO .)
+    DIV             reduce using rule 8 (e -> ENTERO .)
+    $end            reduce using rule 8 (e -> ENTERO .)
+    PARDER          reduce using rule 8 (e -> ENTERO .)
+
+
+state 6
+
+    (9) e -> DECIMAL .
+
+    MAS             reduce using rule 9 (e -> DECIMAL .)
+    MENOS           reduce using rule 9 (e -> DECIMAL .)
+    POR             reduce using rule 9 (e -> DECIMAL .)
+    DIV             reduce using rule 9 (e -> DECIMAL .)
+    $end            reduce using rule 9 (e -> DECIMAL .)
+    PARDER          reduce using rule 9 (e -> DECIMAL .)
+
+
+state 7
+
+    (10) e -> ID .
+
+    MAS             reduce using rule 10 (e -> ID .)
+    MENOS           reduce using rule 10 (e -> ID .)
+    POR             reduce using rule 10 (e -> ID .)
+    DIV             reduce using rule 10 (e -> ID .)
+    $end            reduce using rule 10 (e -> ID .)
+    PARDER          reduce using rule 10 (e -> ID .)
+
+
+state 8
+
+    (2) e -> e MAS . e
+    (2) e -> . e MAS e
+    (3) e -> . e MENOS e
+    (4) e -> . e POR e
+    (5) e -> . e DIV e
+    (6) e -> . MENOS e
+    (7) e -> . PARIZQ e PARDER
+    (8) e -> . ENTERO
+    (9) e -> . DECIMAL
+    (10) e -> . ID
+
+    MENOS           shift and go to state 3
+    PARIZQ          shift and go to state 4
+    ENTERO          shift and go to state 5
+    DECIMAL         shift and go to state 6
+    ID              shift and go to state 7
+
+    e                              shift and go to state 14
+
+state 9
+
+    (3) e -> e MENOS . e
+    (2) e -> . e MAS e
+    (3) e -> . e MENOS e
+    (4) e -> . e POR e
+    (5) e -> . e DIV e
+    (6) e -> . MENOS e
+    (7) e -> . PARIZQ e PARDER
+    (8) e -> . ENTERO
+    (9) e -> . DECIMAL
+    (10) e -> . ID
+
+    MENOS           shift and go to state 3
+    PARIZQ          shift and go to state 4
+    ENTERO          shift and go to state 5
+    DECIMAL         shift and go to state 6
+    ID              shift and go to state 7
+
+    e                              shift and go to state 15
+
+state 10
+
+    (4) e -> e POR . e
+    (2) e -> . e MAS e
+    (3) e -> . e MENOS e
+    (4) e -> . e POR e
+    (5) e -> . e DIV e
+    (6) e -> . MENOS e
+    (7) e -> . PARIZQ e PARDER
+    (8) e -> . ENTERO
+    (9) e -> . DECIMAL
+    (10) e -> . ID
+
+    MENOS           shift and go to state 3
+    PARIZQ          shift and go to state 4
+    ENTERO          shift and go to state 5
+    DECIMAL         shift and go to state 6
+    ID              shift and go to state 7
+
+    e                              shift and go to state 16
+
+state 11
+
+    (5) e -> e DIV . e
+    (2) e -> . e MAS e
+    (3) e -> . e MENOS e
+    (4) e -> . e POR e
+    (5) e -> . e DIV e
+    (6) e -> . MENOS e
+    (7) e -> . PARIZQ e PARDER
+    (8) e -> . ENTERO
+    (9) e -> . DECIMAL
+    (10) e -> . ID
+
+    MENOS           shift and go to state 3
+    PARIZQ          shift and go to state 4
+    ENTERO          shift and go to state 5
+    DECIMAL         shift and go to state 6
+    ID              shift and go to state 7
+
+    e                              shift and go to state 17
+
+state 12
+
+    (6) e -> MENOS e .
+    (2) e -> e . MAS e
+    (3) e -> e . MENOS e
+    (4) e -> e . POR e
+    (5) e -> e . DIV e
+
+    MAS             reduce using rule 6 (e -> MENOS e .)
+    MENOS           reduce using rule 6 (e -> MENOS e .)
+    POR             reduce using rule 6 (e -> MENOS e .)
+    DIV             reduce using rule 6 (e -> MENOS e .)
+    $end            reduce using rule 6 (e -> MENOS e .)
+    PARDER          reduce using rule 6 (e -> MENOS e .)
+
+  ! MAS             [ shift and go to state 8 ]
+  ! MENOS           [ shift and go to state 9 ]
+  ! POR             [ shift and go to state 10 ]
+  ! DIV             [ shift and go to state 11 ]
+
+
+state 13
+
+    (7) e -> PARIZQ e . PARDER
+    (2) e -> e . MAS e
+    (3) e -> e . MENOS e
+    (4) e -> e . POR e
+    (5) e -> e . DIV e
+
+    PARDER          shift and go to state 18
+    MAS             shift and go to state 8
+    MENOS           shift and go to state 9
+    POR             shift and go to state 10
+    DIV             shift and go to state 11
+
+
+state 14
+
+    (2) e -> e MAS e .
+    (2) e -> e . MAS e
+    (3) e -> e . MENOS e
+    (4) e -> e . POR e
+    (5) e -> e . DIV e
+
+    MAS             reduce using rule 2 (e -> e MAS e .)
+    MENOS           reduce using rule 2 (e -> e MAS e .)
+    $end            reduce using rule 2 (e -> e MAS e .)
+    PARDER          reduce using rule 2 (e -> e MAS e .)
+    POR             shift and go to state 10
+    DIV             shift and go to state 11
+
+  ! POR             [ reduce using rule 2 (e -> e MAS e .) ]
+  ! DIV             [ reduce using rule 2 (e -> e MAS e .) ]
+  ! MAS             [ shift and go to state 8 ]
+  ! MENOS           [ shift and go to state 9 ]
+
+
+state 15
+
+    (3) e -> e MENOS e .
+    (2) e -> e . MAS e
+    (3) e -> e . MENOS e
+    (4) e -> e . POR e
+    (5) e -> e . DIV e
+
+    MAS             reduce using rule 3 (e -> e MENOS e .)
+    MENOS           reduce using rule 3 (e -> e MENOS e .)
+    $end            reduce using rule 3 (e -> e MENOS e .)
+    PARDER          reduce using rule 3 (e -> e MENOS e .)
+    POR             shift and go to state 10
+    DIV             shift and go to state 11
+
+  ! POR             [ reduce using rule 3 (e -> e MENOS e .) ]
+  ! DIV             [ reduce using rule 3 (e -> e MENOS e .) ]
+  ! MAS             [ shift and go to state 8 ]
+  ! MENOS           [ shift and go to state 9 ]
+
+
+state 16
+
+    (4) e -> e POR e .
+    (2) e -> e . MAS e
+    (3) e -> e . MENOS e
+    (4) e -> e . POR e
+    (5) e -> e . DIV e
+
+    MAS             reduce using rule 4 (e -> e POR e .)
+    MENOS           reduce using rule 4 (e -> e POR e .)
+    POR             reduce using rule 4 (e -> e POR e .)
+    DIV             reduce using rule 4 (e -> e POR e .)
+    $end            reduce using rule 4 (e -> e POR e .)
+    PARDER          reduce using rule 4 (e -> e POR e .)
+
+  ! MAS             [ shift and go to state 8 ]
+  ! MENOS           [ shift and go to state 9 ]
+  ! POR             [ shift and go to state 10 ]
+  ! DIV             [ shift and go to state 11 ]
+
+
+state 17
+
+    (5) e -> e DIV e .
+    (2) e -> e . MAS e
+    (3) e -> e . MENOS e
+    (4) e -> e . POR e
+    (5) e -> e . DIV e
+
+    MAS             reduce using rule 5 (e -> e DIV e .)
+    MENOS           reduce using rule 5 (e -> e DIV e .)
+    POR             reduce using rule 5 (e -> e DIV e .)
+    DIV             reduce using rule 5 (e -> e DIV e .)
+    $end            reduce using rule 5 (e -> e DIV e .)
+    PARDER          reduce using rule 5 (e -> e DIV e .)
+
+  ! MAS             [ shift and go to state 8 ]
+  ! MENOS           [ shift and go to state 9 ]
+  ! POR             [ shift and go to state 10 ]
+  ! DIV             [ shift and go to state 11 ]
+
+
+state 18
+
+    (7) e -> PARIZQ e PARDER .
+
+    MAS             reduce using rule 7 (e -> PARIZQ e PARDER .)
+    MENOS           reduce using rule 7 (e -> PARIZQ e PARDER .)
+    POR             reduce using rule 7 (e -> PARIZQ e PARDER .)
+    DIV             reduce using rule 7 (e -> PARIZQ e PARDER .)
+    $end            reduce using rule 7 (e -> PARIZQ e PARDER .)
+    PARDER          reduce using rule 7 (e -> PARIZQ e PARDER .)
+
