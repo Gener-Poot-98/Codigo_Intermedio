@@ -1,1 +1,1 @@
-Se ejecuta el archivo llamado: gramatica
+Se ejecuta el archivo llamado: gramatica.
